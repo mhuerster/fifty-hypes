@@ -38,3 +38,9 @@ gem 'jquery-rails'
 # gem 'debugger'
 gem 'mongoid'
 gem 'bson_ext'
+
+gem 'd3-rails'
+
+gem 'angularjs-rails'
+gem 'angular-rails-templates'
+gem 'bower-rails'
