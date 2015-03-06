@@ -65,7 +65,7 @@ angular.module('app.hypocriteApp')
 		return   "<h4>"+(p.peo)+"</h4><img src='"+(p.image)+"' style='width:200px'>"+"<table>"+
 			"<tr><td>Profession:</td><td>"+(p.prof)+"</td></tr>"+
 			"<tr><td>State:</td><td>"+(p.quote)+"</td></tr>"+
-			"<tr><td>Heritage:</td><td>"+(p.desc)+"</td></tr></table>"+ "<a href='https://twitter.com/intent/tweet?screen_name=goldstein_andr' class='twitter-mention-button' data-related='goldstein_andr'>Tweet to @DanaRohrabacher </a>" 
+			"<tr><td>Heritage:</td><td>"+(p.desc)+"</td></tr></table>"+ "<a href='https://twitter.com/share?"+(p.peo)+"%2C%20a%20descendent%20of%20immigrants,%20opposes%20meaningful%20immigration%20reform&hashtags=50States50Hypocrites'>Tweet to"+(p.peo)+"</a>" 
 		}
 
 	var people = [" John Boehner "," Ted Cruz "," Michelle Bachmann "," Mark Krikorian "," Susana Martinez "," George Borjas "," Joe Arpaio "," Dana Rohrabacher "," Peter Brimelow "," Phyllis Schafly "," Tom Tancredo "," John Tanton "," Bobby Jindil "," Virginia Abernethy "," Steven Palazzo "," Lou Barletta "," Jeff Sessions "," Rick Santelli "," Brian Sandoval "," Lisa Murkowski "," John Thune ","  "," Sam Brownback "," John Barasso "," John Derbyshire "," Virginia Foxx (palmeri) "," Bob Goodlatte "," Michael Burgess ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  "," Mark Krikorian ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  "]
