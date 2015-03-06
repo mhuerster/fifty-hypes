@@ -4,4 +4,7 @@ class State
   field :state_id, type: String
   field :name, type: String
   field :boundaries, type: String
+
+  attr_accessible :name, :boundaries, :state_id
+
 end
