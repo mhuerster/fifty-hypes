@@ -3,6 +3,8 @@ angular.module('app.hypocriteApp')
 // Controller business logic - get and process data in here
 .controller('hypocriteCtrl', function hypocriteCtrl($scope) {
 
+  console.log("Hypocrite ctrl loaded")
+
 	// TODO: Data is statically defined for now?
 	$scope.stateBoundaries = [
 		{id:"HI",n:"Hawaii",d:"M233.08751,519.30948L235.02744,515.75293L237.2907,515.42961L237.61402,516.23791L235.51242,519.30948L233.08751,519.30948ZM243.27217,515.59127L249.4153,518.17784L251.51689,517.85452L253.1335,513.97465L252.48686,510.57977L248.28366,510.09479L244.24213,511.87306L243.27217,515.59127ZM273.9878,525.61427L277.706,531.11074L280.13092,530.78742L281.26255,530.30244L282.7175,531.59573L286.43571,531.43407L287.40568,529.97912L284.49577,528.20085L282.55584,524.48263L280.45424,520.92609L274.63444,523.83599L273.9878,525.61427ZM294.19545,534.50564L295.48874,532.5657L300.17691,533.53566L300.82356,533.05068L306.96668,533.69732L306.64336,534.99062L304.05678,536.44556L299.69193,536.12224L294.19545,534.50564ZM299.53027,539.67879L301.47021,543.55866L304.54176,542.42703L304.86509,540.81041L303.24848,538.70882L299.53027,538.3855L299.53027,539.67879ZM306.4817,538.54716L308.74496,535.63726L313.43313,538.06218L317.79798,539.19381L322.16284,541.94205L322.16284,543.88198L318.6063,545.66026L313.75645,546.63022L311.33154,545.17527L306.4817,538.54716ZM323.13281,554.06663L324.74942,552.77335L328.14431,554.38997L335.74238,557.94651L339.13727,560.0481L340.75387,562.47302L342.69381,566.83787L346.73534,569.42445L346.41202,570.71775L342.53215,573.95097L338.32896,575.40592L336.87401,574.75928L333.80244,576.53754L331.37753,579.77077L329.11427,582.68067L327.33599,582.51901L323.77945,579.93243L323.45613,575.40592L324.10277,572.981L322.48616,567.32286L320.38456,565.54458L320.2229,562.958L322.48616,561.98804L324.58776,558.91648L325.07274,557.94651L323.45613,556.16823L323.13281,554.06663Z"},
@@ -59,31 +61,53 @@ angular.module('app.hypocriteApp')
 	];
 
 	// The below is copied directly over from original repo......
-	var e = 0
+	var i = 0
 
-	$scope.tooltipHtml = function(n, p) {
-		return   "<h4>"+(p.peo)+"</h4><img src='"+(p.image)+"' style='width:200px'>"+"<table>"+
+	$scope.generateModal = function(n, p) {
+	 
+    console.log("generateModal function invoked")
+
+    return   "<h4>"+(p.peo)+"</h4><img src='"+(p.image)+"' style='width:200px'>"+"<table>"+
 			"<tr><td>Profession:</td><td>"+(p.prof)+"</td></tr>"+
-			"<tr><td>State:</td><td>"+(p.quote)+"</td></tr>"+
-			"<tr><td>Heritage:</td><td>"+(p.desc)+"</td></tr></table>"+ "<a href='https://twitter.com/intent/tweet?screen_name=goldstein_andr' class='twitter-mention-button' data-related='goldstein_andr'>Tweet to @DanaRohrabacher </a>" 
+			"<tr><td>State:</td><td>"+(p.state)+"</td></tr>"+
+			"<tr><td>Heritage:</td><td>"+(p.desc)+"</td></tr></table>"+ "<a href='https://twitter.com/intent/tweet?screen_name=goldstein_andr' class='twitter-mention-button' data-related='goldstein_andr'>Tweet to @DanaRohrabacher </a>"+
+        "<h1> TWITTER HERE </h1>" 
+  
+    // return "<div each-state> THIS IS THE MODAL </div>"
+
+    // get each state's template to render here using eachState directive 
+
+    // Either cache templates, grab templates from url (use a library)
+
 		}
 
-	var people = [" John Boehner "," Ted Cruz "," Michelle Bachmann "," Mark Krikorian "," Susana Martinez "," George Borjas "," Joe Arpaio "," Dana Rohrabacher "," Peter Brimelow "," Phyllis Schafly "," Tom Tancredo "," John Tanton "," Bobby Jindil "," Virginia Abernethy "," Steven Palazzo "," Lou Barletta "," Jeff Sessions "," Rick Santelli "," Brian Sandoval "," Lisa Murkowski "," John Thune ","  "," Sam Brownback "," John Barasso "," John Derbyshire "," Virginia Foxx (palmeri) "," Bob Goodlatte "," Michael Burgess ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  "," Mark Krikorian ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  "]
-	var images = ["assets/John_Boehner.jpg ","assets/Ted_Cruz.jpg","assets/Michele_Bachmann.jpg","assets/Mark_Krikorian.jpg","assets/Susana_Martinez.jpg","assets/George_Borjas.jpg","assets/Joe_Arpaio.jpg","assets/Dana_Rohrabacher.jpg","assets/Peter_Brimelow.jpg","assets/Phyllis_Schafly.jpg","assets/Tom_Tancredo.jpg","assets/John_Tanton.jpg","assets/Bobby_Jindil.jpg","assets/Virginia_Abernethy.jpg","assets/Steven_Palazzo.jpg","assets/Lou_Barletta.jpg","assets/Jeff_Sessions.jpg","assets/Rick_Santelli.jpg","assets/Brian_Sandoval.jpg","assets/Lisa Murkowski","assets/John_Thune.jpg","  ","assets/Sam_Brownback.jpg","assets/John_Barrasso.jpg","assets/John_Derbyshire.jpg","assets/Virginia_Foxx.jpg","assets/Bob_Goodlatte.jpg","assets/Michael_Burgess.jpg","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  "]
+  // DATA 
+
+	var people       = [" John Boehner "," Ted Cruz "," Michelle Bachmann "," Mark Krikorian "," Susana Martinez "," George Borjas "," Joe Arpaio "," Dana Rohrabacher "," Peter Brimelow "," Phyllis Schafly "," Tom Tancredo "," John Tanton "," Bobby Jindil "," Virginia Abernethy "," Steven Palazzo "," Lou Barletta "," Jeff Sessions "," Rick Santelli "," Brian Sandoval "," Lisa Murkowski "," John Thune ","  "," Sam Brownback "," John Barasso "," John Derbyshire "," Virginia Foxx (palmeri) "," Bob Goodlatte "," Michael Burgess ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  "," Mark Krikorian ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  "]
+	var images       = ["assets/John_Boehner.jpg ","assets/Ted_Cruz.jpg","assets/Michele_Bachmann.jpg","assets/Mark_Krikorian.jpg","assets/Susana_Martinez.jpg","assets/George_Borjas.jpg","assets/Joe_Arpaio.jpg","assets/Dana_Rohrabacher.jpg","assets/Peter_Brimelow.jpg","assets/Phyllis_Schafly.jpg","assets/Tom_Tancredo.jpg","assets/John_Tanton.jpg","assets/Bobby_Jindil.jpg","assets/Virginia_Abernethy.jpg","assets/Steven_Palazzo.jpg","assets/Lou_Barletta.jpg","assets/Jeff_Sessions.jpg","assets/Rick_Santelli.jpg","assets/Brian_Sandoval.jpg","assets/Lisa Murkowski","assets/John_Thune.jpg","  ","assets/Sam_Brownback.jpg","assets/John_Barrasso.jpg","assets/John_Derbyshire.jpg","assets/Virginia_Foxx.jpg","assets/Bob_Goodlatte.jpg","assets/Michael_Burgess.jpg","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  "]
 	var states_names = [' Ohio ',' Florida ',' Minnesota ',' DC? ',' New Mexico ',' Massachusetts ','Arpaio has repeatedly racially targeted Latinos with years of abuses conducted under the shelter of Arizona\'s immigration law, including illegal stops, searches and arrests that provoked widespread fear among immigrants.',' California ',' Connecticut ',' Missouri ',' Colorado ',' Michigan ',' Louisiana ',' Tennessee ',' Mississippi ',' Pennsylvania ',' California ',' Alabama ',' Illinois ',' Nevada ',' Alaska ',' South Dakota ',' North Dakota ',' Kansas ',' Wyoming ',' New York ',' North Carolina ',' Virginia ',' Texas ',' Georgia ',' Indiana ',' Arkansas ',' Rhode Island ',' South Carolina ',' Hawaii ',' Washington ',' Oregon ',' Idaho ',' Montana ',' Kentucky ',' Maryland ',' Delaware ',' New Jersey ',' Oklahoma ',' Nebraska ',' Utah ',' West Virginia ',' Maine ',' Vermont ',' New Hampshre ',' Wisconsin ',' Iowa ','  ','  ','  ']
 	var states_names = [" Ohio "," Florida "," Minnesota "," DC "," New Mexico "," Massachusetts "," Arizona "," California "," Connecticut "," Missouri "," Colorado "," Michigan "," Louisiana "," Tennessee "," Mississippi "," Pennsylvania "," Alabama "," Illinois "," Nevada "," Alaska "," South Dakota "," North Dakota "," Kansas "," Wyoming "," New York "," North Carolina "," Virginia "," Texas "," Georgia "," Indiana "," Arkansas "," Rhode Island "," South Carolina "," Hawaii "," Washington "," Oregon "," Idaho "," Montana "," Kentucky "," Maryland "," Delaware "," New Jersey "," Oklahoma "," Nebraska "," Utah "," W Virginia "," Maine "," Vermont "," New Hampshire "," Wisconsin "," Iowa "]
-	var professions = [" US House of Representatives "," US House of Representatives "," US House of Representatives "," Executive director of the Center for Immigration Studies, a think-tank in Maryland that promotes stricter immigration control and enforcement "," Governor of New Mexico "," Professor of Economics and Social Policy at the Harvard Kennedy School "," Sheriff of Maricopa County, Arizona "," US House of Representatives "," Writer "," Activist "," Formerly in US House of Representatives, Colorado Gubernatorial Candidate 2014 "," Activist "," Governor of Louisiana "," Professor Emerita at Vanderbilt University best known for work on population demography and for being a white separatist "," US House of Representatives "," US House of Representatives "," US Senate "," CNBC Commentator "," Governor of Nevada "," US Senate "," US Senate ","  "," Governor of Kansas "," US Senate "," Writer ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  "," Executive director of the Center for Immigration Studies, a think-tank that promotes stricter immigration control and enforcement ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  "]
+	var professions  = [" US House of Representatives "," US House of Representatives "," US House of Representatives "," Executive director of the Center for Immigration Studies, a think-tank in Maryland that promotes stricter immigration control and enforcement "," Governor of New Mexico "," Professor of Economics and Social Policy at the Harvard Kennedy School "," Sheriff of Maricopa County, Arizona "," US House of Representatives "," Writer "," Activist "," Formerly in US House of Representatives, Colorado Gubernatorial Candidate 2014 "," Activist "," Governor of Louisiana "," Professor Emerita at Vanderbilt University best known for work on population demography and for being a white separatist "," US House of Representatives "," US House of Representatives "," US Senate "," CNBC Commentator "," Governor of Nevada "," US Senate "," US Senate ","  "," Governor of Kansas "," US Senate "," Writer ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  "," Executive director of the Center for Immigration Studies, a think-tank that promotes stricter immigration control and enforcement ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  "]
 	var descriptions = [" Boehner is of German descent "," Cruz was born in Canada and immigrated to USA in _____ "," Bachmann is of Norweigan descent "," Krikorian was born in Armenia and immigrated to USA in ____ "," Martinez's grandparents immigrated from Mexico "," Borjas was born in Cuba and immigrated to USA "," Arpaio's parents imigrated from Italy "," Rohrabacher is of German descent "," Brimelow was born in England and immigrated to USA in ____ "," Great-Grandfather immigrated from England "," All 4 grandparents immigrated from Italy "," Father immigrated from Canada and Grandfather immigrated from Germany "," Parents immigrated from India "," Abernathy was born in Cuba and immigrated to USA in ____ "," Palazzo is of Italian descent "," Barletta is of Italian descent "," Sessions is of English, Scottish, and Irish descent "," Santelli is of Italian descent "," Sandoval is of Mexican descent "," Murkowski is of Polish, Irish, and French Canadian descent ","  ","  "," Brownback is of German descent ","  "," Derbyshire immigrated from England and his wife immigrated from China "," D "," D "," D "," D "," D "," D "," D "," D "," D "," D "," D "," D "," D ","  "," Krikorian was born in Armenia and immigrated to USA in ____ ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  "]
 		
-	$scope.data ={};	
+  // Initialize data, will be passed into 
+	$scope.data = {};	
 	
 	// Looks like a random colour generator? Do we want to assign some colours?
 	["OH", "FL", "MN", "DC", "NM", "MA", "AZ", "CA", "CT", "MO", "CO", "MI", "LS", "TN", "MS", "PA", "AL", "IL", "NV", "AK", "SD", "ND", "KS", "WY", "NY", "NC", "VA", "TX", "GA", "IN", "AR", "RI", "SC", "HI", "WA", "OR", "ID", "MT", "KY", "MD", "DE", "NJ", "OK", "NE", "UT", "WV", "ME", "VT", "NH", "WI", "IA"]
-		.forEach(function(p){ 
-			var random = Math.round(100*Math.random());
+		.forEach(function(state){ 
 			
-			$scope.data[p]={peo:people[e], desc:descriptions[e], image:images[e], quote:states_names[e],
-					prof:professions[e], color:d3.interpolate("#FF0000", "#0000FF")(random/100)}; 
-			e = e+1;
+      var random = Math.round(100 * Math.random());
+			
+			$scope.data[state] = {
+        peo   : people[i], 
+        desc  : descriptions[i], 
+        image : images[i], 
+        state : states_names[i],
+				prof  : professions[i], 
+        color : d3.interpolate("#FF0000", "#0000FF")(random/100)}; 
+			
+      i = i + 1;
+
 		});
 });

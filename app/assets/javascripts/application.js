@@ -19,10 +19,6 @@
 //= require hypocriteApp/app
 //= require_tree ./hypocriteApp/templates
 //= require_tree ./hypocriteApp/modules
-//= require_tree ./hypocriteApp/filters
 //= require_tree ./hypocriteApp/directives
-//= require_tree ./hypocriteApp/models
-//= require_tree ./hypocriteApp/services
-//= require_tree ./hypocriteApp/controllers
 
 //= require_tree .
