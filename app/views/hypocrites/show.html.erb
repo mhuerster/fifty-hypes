@@ -6,10 +6,24 @@
 </p>
 
 <p>
-  <b>Description:</b>
-  <%= @hypocrite.description %>
+  <b>Current Position:</b>
+  <%= @hypocrite.current_position %>
 </p>
 
+<p>
+  <b>Image Path:</b>
+  <%= @hypocrite.image_path %>
+</p>
+
+<p>
+  <b>Descent:</b>
+  <%= @hypocrite.descent %>
+</p>
+
+<p>
+  <b>Twitter Handle:</b>
+  <%= @hypocrite.twitter %>
+</p>
 
 <%= link_to 'Edit', edit_hypocrite_path(@hypocrite) %> |
 <%= link_to 'Back', hypocrites_path %>
