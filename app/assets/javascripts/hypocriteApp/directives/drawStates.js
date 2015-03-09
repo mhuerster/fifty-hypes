@@ -20,6 +20,15 @@ hypocriteApp.directive('drawStates', function () {
 
       $scope.generateModal = function(stateData) {
 
+        // If no image, use default. Refactor this
+        console.log("This is statedata image")
+        console.log(stateData.image)
+
+        if(stateData.image == "  "){
+          console.log(" NO IMAGE")
+          stateData.image = "assets/shame_on_you.png";
+        }
+
         return   "<div id='state-modal-container'>"+
           "<h4>"+(stateData.peo)+"</h4><img src='"+(stateData.image)+"' style='width:200px'>"+
           "<table>"+
@@ -52,7 +61,7 @@ hypocriteApp.directive('drawStates', function () {
         } 
 
         function toggleModal(stateData) {
-
+          console.log("toggle modal invoked")
           if($scope.open) {
             hideModal();
           } else {
@@ -72,7 +81,11 @@ hypocriteApp.directive('drawStates', function () {
           .style("fill",function(stateData){ 
             return $scope.data[stateData.id].color; 
           })
-          .on("click", toggleModal);
+          .on("click", toggleModal)
+          .on("mouseover", function(){
+            console.log("hover over state")
+            console.log(this)
+          });
       
         // Click outside map to close modal
 
