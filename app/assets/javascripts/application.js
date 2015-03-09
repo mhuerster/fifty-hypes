@@ -16,6 +16,7 @@
 //= require angular
 //= require angular-rails-templates
 
+
 //= require hypocriteApp/app
 //= require_tree ./hypocriteApp/templates
 //= require_tree ./hypocriteApp/modules

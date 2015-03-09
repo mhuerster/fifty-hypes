@@ -22,10 +22,9 @@ hypocriteApp.directive('drawStates', function () {
           "<tr><td>Profession:</td><td>"+(stateData.prof)+"</td></tr>"+
           "<tr><td>State:</td><td>"+(stateData.stateName)+"</td></tr>"+
           "<tr><td>Heritage:</td><td>"+(stateData.desc)+"</td></tr></table>"+
-          "<a href='https://twitter.com/intent/tweet?screen_name=50hypocrites' class='twitter-mention-button'>Tweet to @50hypocrites</a>"+ 
-          "<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>"+"</div>"
-
-
+          "<a href='https://twitter.com/intent/tweet?screen_name=goldstein_andr' class='twitter-mention-button' data-related='goldstein_andr'>Tweet to @DanaRohrabacher </a>"+
+            "<a href='https://twitter.com/intent/tweet?screen_name=50hypocrites' class='twitter-mention-button'>Tweet to @50hypocrites</a>"+ 
+            "<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>"+"</div>"
         }
 
   		$scope.drawMap = function(mapId, data){
@@ -33,8 +32,6 @@ hypocriteApp.directive('drawStates', function () {
         function showModal(stateData){
 
           var hypStateData = data[stateData.id]; // p.id is state acronym/id
-        
-          console.log("show modal invoked p")
 
   				d3.select("#state-modal").transition().duration(200).style("opacity", .99);      
   				d3.select("#state-modal").html($scope.generateModal(hypStateData))  
@@ -57,9 +54,6 @@ hypocriteApp.directive('drawStates', function () {
   					$scope.open = true;
   				}
   			}
-  			
-        // D3 STUFF 
-        // Comments @andrew @date March 8
 
   			d3.select(mapId).selectAll(".state")
   				.data($scope.stateBoundaries)
@@ -79,12 +73,6 @@ hypocriteApp.directive('drawStates', function () {
       $scope.drawMap("#statesvg", $scope.data);
 
       $scope.$watch('exp', function (newVal, oldVal) {
-      });
-
-      $('html').click(function(){
-        console.log("Clicked on html")
-        $scope.hidden = true;
-        console.log($scope.hidden);
       });
     }
   };
