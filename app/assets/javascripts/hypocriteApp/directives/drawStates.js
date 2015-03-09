@@ -17,28 +17,29 @@ hypocriteApp.directive('drawStates', function () {
       $scope.open          = false;
       $scope.twitterLink   = "<a href='https://twitter.com/intent/tweet?screen_name=50hypocrites' class='twitter-mention-button'>Tweet to @50hypocrites</a>";
       $scope.twitterScript = "<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>";
+      $scope.twitterLoad = "<script> twttr.widgets.load()</script>";
 
       $scope.generateModal = function(stateData) {
 
         // If no image, use default. Refactor this
-        console.log("This is statedata image")
-        console.log(stateData.image)
-
         if(stateData.image == "  "){
           console.log(" NO IMAGE")
           stateData.image = "assets/shame_on_you.png";
         }
 
         return   "<div id='state-modal-container'>"+
-          "<h4>"+(stateData.peo)+"</h4><img src='"+(stateData.image)+"' style='width:200px'>"+
-          "<table>"+
-            "<tr><td>Profession:</td><td>"+(stateData.prof)+"</td></tr>"+
-            "<tr><td>State:</td><td>"+(stateData.stateName)+"</td></tr>"+
-            "<tr><td>Heritage:</td><td>"+(stateData.desc)+"</td></tr>"+
+          "<p class='modal-header'>"+(stateData.peo)+"<p>"+
+          "<img src='"+(stateData.image)+"' style='width:250px'>"+
+          "<table id='table-content'>"+
+            "<tr class='table-row'><td class='first-column'>Profession:</td><td class='second-column'>"+(stateData.prof)+"</td></tr>"+
+            "<tr class='table-row'><td class='first-column'>State:</td><td class='second-column'>"+(stateData.stateName)+"</td></tr>"+
+            "<tr class='table-row'><td class='first-column'>Heritage:</td><td class='second-column'>"+(stateData.desc)+"</td></tr>"+
           "</table>"+ 
           $scope.twitterLink +
           $scope.twitterScript +
+          $scope.twitterLoad +
           "</div>"
+
 
         }
 
