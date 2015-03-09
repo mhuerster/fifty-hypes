@@ -1,4 +1,4 @@
-hypocriteApp.directive('drawStates', function ($templateCache) {
+hypocriteApp.directive('drawStates', function () {
 
   return {
     
@@ -10,7 +10,7 @@ hypocriteApp.directive('drawStates', function ($templateCache) {
         modalFunction   : '='    
     },
     
-    templateUrl: "assets/hypocriteApp/templates/states.html",
+    // templateUrl: "assets/hypocriteApp/templates/states.html",
     
     link: function ($scope, element, attrs) {		
   		
