@@ -81,11 +81,11 @@ angular.module('app.hypocriteApp')
       var random = Math.round(100 * Math.random());
 			
 			$scope.data[state] = {
-        peo   : people[i], 
-        desc  : descriptions[i], 
-        image : images[i], 
-        state : states_names[i],
-				prof  : professions[i], 
+        peo       : people[i], 
+        desc      : descriptions[i], 
+        image     : images[i], 
+        stateName : states_names[i],
+				prof      : professions[i], 
         color : d3.interpolate("#FF0000", "#0000FF")(random/100)}; 
 			
       i = i + 1;

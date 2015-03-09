@@ -43,4 +43,5 @@ gem 'd3-rails'
 
 gem 'angularjs-rails'
 gem 'angular-rails-templates'
+gem 'angular-strap-rails', '~> 2.0.2.0'
 gem 'bower-rails'
