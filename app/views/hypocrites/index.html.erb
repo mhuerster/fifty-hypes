@@ -1,9 +1,12 @@
-<h1>Listing hypocrites</h1>
+<h1>Here are the Hypocrites</h1>
 
 <table>
   <tr>
     <th>Name</th>
-    <th>Description</th>
+    <th>Current_Position</th>
+    <th>Image</th>
+    <th>Descent</th>
+    <th>Twitter</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,7 +15,10 @@
 <% @hypocrites.each do |hypocrite| %>
   <tr>
     <td><%= hypocrite.name %></td>
-    <td><%= hypocrite.description %></td>
+    <td><%= hypocrite.current_position %></td>
+    <td><%= hypocrite.image_path %></td>
+    <td><%= hypocrite.descent %></td>
+    <td><%= hypocrite.twitter %></td>
     <td><%= link_to 'Show', hypocrite %></td>
     <td><%= link_to 'Edit', edit_hypocrite_path(hypocrite) %></td>
     <td><%= link_to 'Destroy', hypocrite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -22,4 +28,4 @@
 
 <br />
 
-<%= link_to 'New Hypocrite', new_hypocrite_path %>
+<%= link_to 'Add New Hypocrite!', new_hypocrite_path %>
