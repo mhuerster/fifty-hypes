@@ -67,13 +67,13 @@ angular.module('app.hypocriteApp')
 	 
     console.log("generateModal function invoked")
 
-    return   "<h4>"+(p.peo)+"</h4><img src='"+(p.image)+"' style='width:200px'>"+"<table>"+
-			"<tr><td>Profession:</td><td>"+(p.prof)+"</td></tr>"+
-			"<tr><td>State:</td><td>"+(p.state)+"</td></tr>"+
-			"<tr><td>Heritage:</td><td>"+(p.desc)+"</td></tr></table>"+ "<a href='https://twitter.com/intent/tweet?screen_name=goldstein_andr' class='twitter-mention-button' data-related='goldstein_andr'>Tweet to @DanaRohrabacher </a>"+
-        "<h1> TWITTER HERE </h1>" 
+   //  return   "<h4>"+(p.peo)+"</h4><img src='"+(p.image)+"' style='width:200px'>"+"<table>"+
+			// "<tr><td>Profession:</td><td>"+(p.prof)+"</td></tr>"+
+			// "<tr><td>State:</td><td>"+(p.state)+"</td></tr>"+
+			// "<tr><td>Heritage:</td><td>"+(p.desc)+"</td></tr></table>"+ "<a href='https://twitter.com/intent/tweet?screen_name=goldstein_andr' class='twitter-mention-button' data-related='goldstein_andr'>Tweet to @DanaRohrabacher </a>"+
+   //      "<h1> TWITTER HERE </h1>" 
   
-    // return "<div each-state> THIS IS THE MODAL </div>"
+    return "<div each-state></div>"
 
     // get each state's template to render here using eachState directive 
 
