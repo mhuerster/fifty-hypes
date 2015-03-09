@@ -1,4 +1,4 @@
-<div data-ng-app="app.hypocriteApp" data-ng-controller="hypocriteCtrl">
+<div data-ng-app="app.hypocriteApp" data-ng-controller="hypocriteCtrl" id="outer-container">
   <!-- Directive to draw states -->
   <div data-draw-states 
        data-state-boundaries="stateBoundaries"
@@ -15,6 +15,9 @@
   <center>
     <h3 style='margin-top:-20px;'>Yeah. It doesn't make any sense to us either. </h3>
   </center>
+  <center>
+    <p> Click on any state to learn more, click anywhere on the map to close</p>
+  </center>  
   <div id="state-modal" ></div>
   <svg width="1160" height="600" id="statesvg"></svg> 
   <!-- <div each-state></div> -->

@@ -12,7 +12,7 @@
     font-size: 12px;
     
     /*width:auto;*/
-    width: 350px;
+    max-width: 350px;
     padding: 4px;
     color: white;
     opacity: 0;
@@ -21,7 +21,8 @@
     margin: 10px;
     font: 12px sans-serif;
     background: lightsteelblue;
-    pointer-events: none;
+    z-index: 999999;
+    /*pointer-events: none;*/
 }
 
 #state-modal table {
